@@ -5858,11 +5858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\Team07\\tests\\IntegrationTests\\IntegrationTests.csproj",
+      "projectUniqueName": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\tests\\IntegrationTests\\IntegrationTests.csproj",
       "projectName": "IntegrationTests",
-      "projectPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\Team07\\tests\\IntegrationTests\\IntegrationTests.csproj",
+      "projectPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\tests\\IntegrationTests\\IntegrationTests.csproj",
       "packagesPath": "C:\\Users\\s531378\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\Team07\\tests\\IntegrationTests\\obj\\",
+      "outputPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\tests\\IntegrationTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
