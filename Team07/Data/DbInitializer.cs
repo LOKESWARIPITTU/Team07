@@ -55,7 +55,7 @@ new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentId = 533487 , Degree
                 Console.WriteLine($"Inserted {degreeplan.Length} new degree plans.");
                 foreach (DegreePlan d in degreeplan)
                 {
-                    context.DegreePlan.Add(d);
+                    context.DegreePlans.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -97,7 +97,31 @@ new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentId = 533487 , Degree
                 Console.WriteLine($"Inserted {studentterm.Length} new student terms.");
                 foreach (StudentTerm d in studentterm)
                 {
-                    context.StudentTerm.Add(d);
+                    context.StudentTerms.Add(d);
                 }
                 context.SaveChanges();
-            }}}
+            }
+			if (context.Students.Any())
+            {
+                Console.WriteLine("Students already exist.");
+            }
+            else
+            {
+                var student = new Student[]
+                {
+					new Student{ StudentId = 531382 , First = "Sreelekha" , Last = "Vijaya" , Snumber =S531382 , 919 = 919562176},
+new Student{ StudentId = 531496 , First = "Shivani Reddy" , Last = "Dodla" , Snumber =S531496 , 919 = 919565950},
+new Student{ StudentId = 531378 , First = "Lokeswari" , Last = "Pittu" , Snumber =S531378 , 919 = 919563259},
+new Student{ StudentId = 534051 , First = "Abhinay" , Last = "Kaitha" , Snumber =S534051 , 919 = 919570258},
+new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumber =S533487 , 919 = 919568647},
+
+
+                };
+                Console.WriteLine($"Inserted {student.Length} new student.");
+                foreach (Student d in student)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+			}}
