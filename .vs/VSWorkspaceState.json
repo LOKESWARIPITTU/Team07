@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
     "\\Team07",
     "\\Team07\\Models"
   ],
   "SelectedNode": "\\Team07\\Models\\Student.cs",
+=======
+    ""
+  ],
+>>>>>>> ab0e45466078074319f962147c18df38e9a423f0
   "PreviewInSolutionExplorer": false
 }
