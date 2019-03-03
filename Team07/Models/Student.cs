@@ -9,6 +9,6 @@ namespace Team07.Models
         public string First { get; set; }
         public string Last { get; set; }
         public string Snumber { get; set; }
-        public int Catpawsnum { get; set; }
+        public int catpawsnum { get; set; }
     }
 }

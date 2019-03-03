@@ -19,7 +19,7 @@ namespace Team07.Data
             {
                 var degrees = new Degree[]
                 {
-                    new Degree{DegreeId = 1 , DegreeAbrrev =  "ACS+2", DegreeName = "MS ACS +2" },
+new Degree{DegreeId = 1 , DegreeAbrrev =  "ACS+2", DegreeName = "MS ACS +2" },
 new Degree{DegreeId = 2 , DegreeAbrrev =  "ACS+DB", DegreeName = "MS ACS + DB"},
 new Degree{DegreeId = 3 , DegreeAbrrev =  "ACS+NF", DegreeName = "MS ACS+  NF"},
 new Degree{DegreeId = 4 , DegreeAbrrev =  "ACS", DegreeName = "MS ACS"},
@@ -41,11 +41,11 @@ if (context.Requirements.Any())
             }
             else
             {
-                var requirement = new Requirement []
+                var requirements = new Requirement []
                 {
 
 
-                    new Requirement{ RequirementID = 460 , RequirementAbbrev = "DB" , CourseName = "44-460 Database"},
+new Requirement{ RequirementID = 460 , RequirementAbbrev = "DB" , CourseName = "44-460 Database"},
 new Requirement{ RequirementID = 356 , RequirementAbbrev = "NF", CourseName = "44-356 Network Fundamentals"},
 new Requirement{ RequirementID = 542 , RequirementAbbrev = "OOP" , CourseName = "44-542 Object Oriented Programming"},
 new Requirement{ RequirementID = 563 , RequirementAbbrev = "Web apps" , CourseName = "44-563 Web apps"},
@@ -77,14 +77,17 @@ if (context.Students.Any())
             {
                 var student = new Student[]
                 {
-					new Student{ StudentId = 531382 , First = "Sreelekha" , Last = "Vijaya" , Snumber =S531382 , 919 = 919562176},
-new Student{ StudentId = 531496 , First = "Shivani Reddy" , Last = "Dodla" , Snumber =S531496 , 919 = 919565950},
-new Student{ StudentId = 531378 , First = "Lokeswari" , Last = "Pittu" , Snumber =S531378 , 919 = 919563259},
-new Student{ StudentId = 534051 , First = "Abhinay" , Last = "Kaitha" , Snumber =S534051 , 919 = 919570258},
-new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumber =S533487 , 919 = 919568647},
+new Student{ StudentId = 531382 , First = "Sreelekha" , Last = "Vijaya" , Snumber = "S531382" , catpawsnum = 919562176},
+new Student{ StudentId = 531496 , First = "Shivani Reddy" , Last = "Dodla" , Snumber = "S531496" , catpawsnum = 919565950},
+new Student{ StudentId = 531378 , First = "Lokeswari" , Last = "Pittu" , Snumber = "S531378" , catpawsnum = 919563259},
+new Student{ StudentId = 534051 , First = "Abhinay" , Last = "Kaitha" , Snumber = "S534051" , catpawsnum = 919570258},
+new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumber = "S533487" , catpawsnum = 919568647},
+
 
 
                 };
+
+        
                 Console.WriteLine($"Inserted {student.Length} new student.");
                 foreach (Student d in student)
                 {
@@ -94,7 +97,7 @@ new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumbe
             }
 		
 
-            if (context.DegreePlans.Any())
+if (context.DegreePlans.Any())
             {
                 Console.WriteLine("Degree Plans already exist.");
             }
@@ -102,7 +105,7 @@ new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumbe
             {
                 var degreeplan = new DegreePlan[]
                 {
-                    new DegreePlan{ DegreePlanId = 10 ,  DegreeID = 3 ,  StudentId = 531382 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
+new DegreePlan{ DegreePlanId = 10 ,  DegreeID = 3 ,  StudentId = 531382 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
 new DegreePlan{ DegreePlanId = 11 ,  DegreeID = 3 ,  StudentId = 531382 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
 new DegreePlan{ DegreePlanId = 12 ,  DegreeID = 3 ,  StudentId = 531496 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
 new DegreePlan{ DegreePlanId = 13 ,  DegreeID = 3 ,  StudentId = 531496 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
