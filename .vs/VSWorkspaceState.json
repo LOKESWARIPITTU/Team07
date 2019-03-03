@@ -5,6 +5,10 @@
     "\\Team07\\Data",
     "\\Team07\\Models"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\Team07\\Models\\DegreeRequirement.cs",
+=======
+  "SelectedNode": "\\Team07\\Data\\DbInitializer.cs",
+>>>>>>> 7f16fb579e808faeaf2f4a60753c0852ffecb497
   "PreviewInSolutionExplorer": false
 }
