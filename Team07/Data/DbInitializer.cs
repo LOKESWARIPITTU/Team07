@@ -59,12 +59,36 @@ new Requirement{ RequirementID = 692 , RequirementAbbrev = "GDP2" , CourseName =
 
 };
                 Console.WriteLine($"Inserted {requirement.Length} new reuirements.");
-                foreach (Team07 d in degreeplan)
+                foreach (Team07 d in requirements)
                 {
                     context.Requirements.Add(d);
                 }
                 context.SaveChanges();
             }
+              
+ 
+if (context.Students.Any())
+            {
+                Console.WriteLine("Students already exist.");
+            }
+            else
+            {
+                var student = new Student []
+                {
+                    new Student{ StudentId = 531382 , First = "Sreelekha" , Last = "Vijaya" , Snumber = "S531382" , 919 = 919562176},
+new Student{ StudentId = 531496 , First = "Shivani Reddy" , Last = "Dodla" , Snumber = "S531496" , 919 = 919565950},
+new Student{ StudentId = 531378 , First = "Lokeswari" , Last = "Pittu" , Snumber = "S531378" , 919 = 919563259},
+new Student{ StudentId = 534051 , First = "Abhinay" , Last = "Kaitha" , Snumber = "S534051" , 919 = 919570258},
+new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumber = "S533487" , 919 = 919568647},
+};
+ Console.WriteLine($"Inserted {student.Length} new students.");
+                foreach (Team07 d in student)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+              
 
             if (context.DegreePlans.Any())
             {
