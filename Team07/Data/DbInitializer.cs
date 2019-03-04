@@ -67,6 +67,34 @@ new Requirement{ RequirementID = 692 , RequirementAbbrev = "GDP2" , CourseName =
                 }
                 context.SaveChanges();
             }
+ if (context.DegreeRequirement.Any())
+            {
+                Console.WriteLine("Degree Requirements already exist.");
+            }
+            else
+            {
+                var degreerequirement = new DegreeRequirement[]
+                {
+                     new DegreeRequirement{DegreeRequirementId = 1 ,  DegreeId = 3 , RequirementId = 356},
+ new DegreeRequirement{DegreeRequirementId = 2 ,  DegreeId = 3 , RequirementId = 542},
+ new DegreeRequirement{DegreeRequirementId = 3 ,  DegreeId = 3 , RequirementId = 563},
+ new DegreeRequirement{DegreeRequirementId = 4 ,  DegreeId = 3 , RequirementId = 560},
+ new DegreeRequirement{DegreeRequirementId = 5 ,  DegreeId = 3 , RequirementId = 555},
+ new DegreeRequirement{DegreeRequirementId = 6 ,  DegreeId = 3 , RequirementId = 618},
+ new DegreeRequirement{DegreeRequirementId = 7 ,  DegreeId = 3 , RequirementId = 1},
+ new DegreeRequirement{DegreeRequirementId = 8 ,  DegreeId = 3 , RequirementId = 664},
+ new DegreeRequirement{DegreeRequirementId = 9 ,  DegreeId = 3 , RequirementId = 10},
+ new DegreeRequirement{DegreeRequirementId = 10 ,  DegreeId = 3 , RequirementId = 20},
+ new DegreeRequirement{DegreeRequirementId = 11 ,  DegreeId = 3 , RequirementId = 691},
+ new DegreeRequirement{DegreeRequirementId = 12 ,  DegreeId = 3 , RequirementId = 692},
+ };
+                 Console.WriteLine($"Inserted {degreetermrequirement.Length} new student terms.");
+                foreach (Team07 d in degreetermrequirement )
+                {
+                    context.DegreeRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
               
  
 if (context.Students.Any())
@@ -96,7 +124,6 @@ new Student{ StudentId = 533487 , First = "Rakesh" , Last = "Avirineni" , Snumbe
                 context.SaveChanges();
             }
 		
-
 if (context.DegreePlans.Any())
             {
                 Console.WriteLine("Degree Plans already exist.");
@@ -125,7 +152,36 @@ new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentId = 533487 , Degree
                 context.SaveChanges();
             }
          
-   
+   if (context.DegreeplanTermRequirements.Any())
+            {
+                Console.WriteLine("DegreePlan Term Requirements already exist.");
+            }
+            else
+            {
+                var degreeplantermrequirement = new DegreeplanTermRequirement[]
+                {
+
+			new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 1 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 560},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 2 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 356},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 3 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 542},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 4 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 563},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 5 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 664},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 6 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 1},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 7 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 10},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 8 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 618},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 9 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 691},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 10 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 555},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 11 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 20},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 12 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 692},
+};
+                Console.WriteLine($"Inserted {degreeplantermrequirement.Length} new student terms.");
+                foreach (Team07 d in degreeplantermrequirement )
+                {
+                    context.DegreeplanTermRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+
 if (context.StudentTerms.Any())
             {
                 Console.WriteLine("Student Terms already exist.");
@@ -169,67 +225,6 @@ if (context.StudentTerms.Any())
                 context.SaveChanges();
             }
 
-
-if (context.DegreeplanTermRequirements.Any())
-            {
-                Console.WriteLine("DegreePlan Term Requirements already exist.");
-            }
-            else
-            {
-                var degreeplantermrequirement = new DegreeplanTermRequirement[]
-                {
-
-			new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 1 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 560},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 2 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 356},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 3 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 542},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 4 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 563},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 5 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 664},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 6 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 1},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 7 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 10},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 8 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 618},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 9 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 691},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 10 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 555},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 11 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 20},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 12 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 692},
-};
-                Console.WriteLine($"Inserted {degreeplantermrequirement.Length} new student terms.");
-                foreach (Team07 d in degreeplantermrequirement )
-                {
-                    context.DegreeplanTermRequirements.Add(d);
-                }
-                context.SaveChanges();
-            }
-
-
-
-               if (context.DegreeRequirement.Any())
-            {
-                Console.WriteLine("Degree Requirements already exist.");
-            }
-            else
-            {
-                var degreerequirement = new DegreeRequirement[]
-                {
-                     new DegreeRequirement{DegreeRequirementId = 1 ,  DegreeId = 3 , RequirementId = 356},
- new DegreeRequirement{DegreeRequirementId = 2 ,  DegreeId = 3 , RequirementId = 542},
- new DegreeRequirement{DegreeRequirementId = 3 ,  DegreeId = 3 , RequirementId = 563},
- new DegreeRequirement{DegreeRequirementId = 4 ,  DegreeId = 3 , RequirementId = 560},
- new DegreeRequirement{DegreeRequirementId = 5 ,  DegreeId = 3 , RequirementId = 555},
- new DegreeRequirement{DegreeRequirementId = 6 ,  DegreeId = 3 , RequirementId = 618},
- new DegreeRequirement{DegreeRequirementId = 7 ,  DegreeId = 3 , RequirementId = 1},
- new DegreeRequirement{DegreeRequirementId = 8 ,  DegreeId = 3 , RequirementId = 664},
- new DegreeRequirement{DegreeRequirementId = 9 ,  DegreeId = 3 , RequirementId = 10},
- new DegreeRequirement{DegreeRequirementId = 10 ,  DegreeId = 3 , RequirementId = 20},
- new DegreeRequirement{DegreeRequirementId = 11 ,  DegreeId = 3 , RequirementId = 691},
- new DegreeRequirement{DegreeRequirementId = 12 ,  DegreeId = 3 , RequirementId = 692},
- };
-                 Console.WriteLine($"Inserted {degreetermrequirement.Length} new student terms.");
-                foreach (Team07 d in degreetermrequirement )
-                {
-                    context.DegreeRequirements.Add(d);
-                }
-                context.SaveChanges();
-            }
-
             }
         }
+    }
