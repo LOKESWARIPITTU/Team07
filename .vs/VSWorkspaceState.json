@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Team07",
+    "\\Team07\\Controllers",
     "\\Team07\\Data",
+    "\\Team07\\Data\\Migrations",
     "\\Team07\\Models"
   ],
-  "SelectedNode": "\\Team07\\Data\\DbInitializer.cs",
+  "SelectedNode": "\\Team07\\Models\\StudentTerm.cs",
   "PreviewInSolutionExplorer": false
 }

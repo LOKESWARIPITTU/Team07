@@ -30,3 +30,11 @@ C:\Users\s531378\Documents\44663\Team07\Team07\Team07\obj\Debug\netcoreapp2.2\Te
 C:\Users\s531378\Documents\44663\Team07\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.dll
 C:\Users\s531378\Documents\44663\Team07\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.pdb
 C:\Users\s531378\Documents\44663\Team07\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csproj.CopyComplete
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csprojAssemblyReference.cache
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csproj.CoreCompileInputs.cache
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.RazorAssemblyInfo.cache
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.RazorAssemblyInfo.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.AssemblyInfoInputs.cache
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.AssemblyInfo.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.dll
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.pdb
