@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Team07.Data;
 
 namespace Team07
 {
@@ -21,7 +23,7 @@ public static void Main(string[] args)
         var services = scope.ServiceProvider;
         try
         {
-            var context = services.GetRequiredService<SchoolContext>();
+            var context = services.GetRequiredService<ApplicationDbContext>();
             DbInitializer.Initialize(context);
         }
         catch (Exception ex)
@@ -34,9 +36,12 @@ public static void Main(string[] args)
     host.Run();
 }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().Build();
+        private static IWebHost BuildWebHost(string[] args)=>
+        
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().Build();
+        }
+
+ 
 
     }
-}
+

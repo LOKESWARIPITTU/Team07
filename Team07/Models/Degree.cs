@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Team07.Models
 {
     public class Degree
     {
-        public int ID { get; set; }
-        public string DegreeAbbrev { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int DegreeId { get; set; }
+        public string DegreeAbrrev { get; set; }
         public string DegreeName { get; set; }
       
 

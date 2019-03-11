@@ -7,6 +7,6 @@
     "\\Team07\\Data\\Migrations",
     "\\Team07\\Models"
   ],
-  "SelectedNode": "\\Team07\\Models\\StudentTerm.cs",
+  "SelectedNode": "\\Team07\\Data\\ApplicationDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

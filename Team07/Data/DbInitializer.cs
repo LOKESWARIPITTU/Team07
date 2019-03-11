@@ -65,7 +65,7 @@ new Requirement{ RequirementID = 691 , RequirementAbbrev = "GDP1" , CourseName =
 new Requirement{ RequirementID = 692 , RequirementAbbrev = "GDP2" , CourseName = "GDP2"}
 
 };
-                Console.WriteLine($"Inserted {requirement.Length} new reuirements.");
+                Console.WriteLine($"Inserted {requirements.Length} new reuirements.");
                 foreach (Requirement d in requirements)
                 {
                     context.Requirements.Add(d);
@@ -153,7 +153,7 @@ if (context.StudentTerms.Any())
 
 
 
-if (context.DegreeRequirement.Any())
+if (context.DegreeRequirements.Any())
             {
                 Console.WriteLine("Degree Requirements already exist.");
             }
@@ -174,8 +174,8 @@ if (context.DegreeRequirement.Any())
  new DegreeRequirement{DegreeRequirementId = 11 ,  DegreeId = 3 , RequirementId = 691},
  new DegreeRequirement{DegreeRequirementId = 12 ,  DegreeId = 3 , RequirementId = 692}
  };
-                 Console.WriteLine($"Inserted {degreetermrequirement.Length} new student terms.");
-                foreach ( DegreeRequirement d in degreetermrequirement )
+                 Console.WriteLine($"Inserted { degreerequirement.Length} new student terms.");
+                foreach ( DegreeRequirement d in degreerequirement)
                 {
                     context.DegreeRequirements.Add(d);
                 }
@@ -193,16 +193,16 @@ if (context.DegreePlans.Any())
             {
                 var degreeplan = new DegreePlan[]
                 {
-new DegreePlan{ DegreePlanId = 10 ,  DegreeID = 3 ,  StudentId = 531382 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
-new DegreePlan{ DegreePlanId = 11 ,  DegreeID = 3 ,  StudentId = 531382 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
-new DegreePlan{ DegreePlanId = 12 ,  DegreeID = 3 ,  StudentId = 531496 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
-new DegreePlan{ DegreePlanId = 13 ,  DegreeID = 3 ,  StudentId = 531496 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
-new DegreePlan{ DegreePlanId = 14 ,  DegreeID = 3 ,  StudentId = 531378 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
-new DegreePlan{ DegreePlanId = 15 ,  DegreeID = 3 ,  StudentId = 531378 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
-new DegreePlan{ DegreePlanId = 16 ,  DegreeID = 3 ,  StudentId = 534051 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
-new DegreePlan{ DegreePlanId = 17 ,  DegreeID = 3 ,  StudentId = 534051 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
-new DegreePlan{ DegreePlanId = 18 ,  DegreeID = 3 ,  StudentId = 533487 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
-new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentId = 533487 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"}
+new DegreePlan{ DegreePlanId = 10 ,  DegreeID = 3 ,  StudentID = 531382 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
+new DegreePlan{ DegreePlanId = 11 ,  DegreeID = 3 ,  StudentID = 531382 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
+new DegreePlan{ DegreePlanId = 12 ,  DegreeID = 3 ,  StudentID = 531496 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
+new DegreePlan{ DegreePlanId = 13 ,  DegreeID = 3 ,  StudentID = 531496 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
+new DegreePlan{ DegreePlanId = 14 ,  DegreeID = 3 ,  StudentID = 531378 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
+new DegreePlan{ DegreePlanId = 15 ,  DegreeID = 3 ,  StudentID = 531378 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
+new DegreePlan{ DegreePlanId = 16 ,  DegreeID = 3 ,  StudentID = 534051 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"},
+new DegreePlan{ DegreePlanId = 17 ,  DegreeID = 3 ,  StudentID = 534051 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
+new DegreePlan{ DegreePlanId = 18 ,  DegreeID = 3 ,  StudentID = 533487 , DegreePlanAbbrev = "Slow and Easy" , DegreePlanName = "As Slow as I can"},
+new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentID = 533487 , DegreePlanAbbrev = "Super Fast" , DegreePlanName = "As Fast as I can"}
 
                 };
                 Console.WriteLine($"Inserted {degreeplan.Length} new degree plans.");
@@ -221,23 +221,23 @@ new DegreePlan{ DegreePlanId = 19 ,  DegreeID = 3 ,  StudentId = 533487 , Degree
             {
                 var degreeplantermrequirement = new DegreePlanTermRequirement[]
                 {
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 1 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 560},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 2 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 356},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 3 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 542},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 4 ,  DegreePlanID = 10 , TermId =  1 , RequirementId = 563},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 5 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 664},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 6 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 1},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 7 ,  DegreePlanID = 10 , TermId =  2 , RequirementId = 10},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 8 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 618},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 9 ,  DegreePlanID = 10 , TermId =  3 , RequirementId = 691},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 10 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 555},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 11 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 20},
-new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 12 ,  DegreePlanID = 10 , TermId =  4 , RequirementId = 692}
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 1 ,  DegreePlanID = 10 , TermID =  1 , RequirementID = 560},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 2 ,  DegreePlanID = 10 , TermID =  1 , RequirementID = 356},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 3 ,  DegreePlanID = 10 , TermID =  1 , RequirementID = 542},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 4 ,  DegreePlanID = 10 , TermID =  1 , RequirementID = 563},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 5 ,  DegreePlanID = 10 , TermID =  2 , RequirementID = 664},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 6 ,  DegreePlanID = 10 , TermID =  2 , RequirementID = 1},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 7 ,  DegreePlanID = 10 , TermID =  2 , RequirementID = 10},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 8 ,  DegreePlanID = 10 , TermID =  3 , RequirementID = 618},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 9 ,  DegreePlanID = 10 , TermID =  3 , RequirementID = 691},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 10 ,  DegreePlanID = 10 , TermID =  4 , RequirementID = 555},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 11 ,  DegreePlanID = 10 , TermID =  4 , RequirementID = 20},
+new DegreePlanTermRequirement{ DegreePlanTermRequirementId = 12 ,  DegreePlanID = 10 , TermID =  4 , RequirementID = 692}
 };
                 Console.WriteLine($"Inserted {degreeplantermrequirement.Length} new student terms.");
                 foreach (DegreePlanTermRequirement d in degreeplantermrequirement )
                 {
-                    context.DegreeplanTermRequirements.Add(d);
+                    context.DegreePlanTermRequirements.Add(d);
                 }
                 context.SaveChanges();
             }
