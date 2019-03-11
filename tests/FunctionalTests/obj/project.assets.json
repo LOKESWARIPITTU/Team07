@@ -5853,23 +5853,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\S533487\\.nuget\\packages\\": {},
+    "C:\\Users\\s531496\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S533487\\Documents\\44663\\Team07\\tests\\FunctionalTests\\FunctionalTests.csproj",
+      "projectUniqueName": "C:\\Users\\s531496\\Documents\\44663\\Team07\\tests\\FunctionalTests\\FunctionalTests.csproj",
       "projectName": "FunctionalTests",
-      "projectPath": "C:\\Users\\S533487\\Documents\\44663\\Team07\\tests\\FunctionalTests\\FunctionalTests.csproj",
-      "packagesPath": "C:\\Users\\S533487\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\S533487\\Documents\\44663\\Team07\\tests\\FunctionalTests\\obj\\",
+      "projectPath": "C:\\Users\\s531496\\Documents\\44663\\Team07\\tests\\FunctionalTests\\FunctionalTests.csproj",
+      "packagesPath": "C:\\Users\\s531496\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\s531496\\Documents\\44663\\Team07\\tests\\FunctionalTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\S533487\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\s531496\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
