@@ -62,3 +62,8 @@ C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.Ra
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.RazorTargetAssemblyInfo.cs
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.Views.pdb
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csproj.CopyComplete
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Degrees\Create.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Degrees\Delete.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Degrees\Details.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Degrees\Edit.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Degrees\Index.g.cshtml.cs
