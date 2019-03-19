@@ -20,9 +20,44 @@ namespace Team07.Controllers
         }
 
         // GET: DegreePlanTermRequirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.DegreePlanTermRequirements.ToListAsync());
+            //ViewData["StatusSortParm"] = String.IsNullOrEmpty(sortOrder) ? "status_desc" : "";
+            ViewData["CreditSortParm"] = sortOrder == "Credits" ? "credit_desc" : "Credits";
+            ViewData["TermsSortParm"] = sortOrder == "Terms" ? "term_desc" : "Term";
+            ViewData["DegreeplanSortParm"] = sortOrder == "Degreeplans" ? "degreeplan_desc" : "Degreeplan";
+            ViewData["CurrentFilter"] = searchString;
+            var slots = from s in _context.DegreePlanTermRequirements
+                        select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                slots = slots.Where(s => s.TermID.ToString().Contains(searchString)
+                                 || s.RequirementID.ToString().Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Degreeplan_desc":
+                    slots = slots.OrderByDescending(s => s.DegreePlanID);
+                    break;
+                case "credit_desc":
+                    slots = slots.OrderBy(s => s.RequirementID);
+                    break;
+                case "term_desc":
+                    slots = slots.OrderByDescending(s => s.TermID);
+                    break;
+                case "Cedits":
+                    slots = slots.OrderBy(s => s.RequirementID);
+                    break;
+                case "Term":
+                    slots = slots.OrderByDescending(s => s.TermID);
+                    break;
+                default:
+                    slots = slots.OrderBy(s => s.DegreePlanTermRequirementId);
+                    break;
+            }
+            //  var applicationDbContext = _context.Slots.Include(s => s.SlotId).Include(s => s.DegreePlan);
+            //return View(await applicationDbContext.ToListAsync());
+            return View(await slots.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlanTermRequirements/Details/5
@@ -34,6 +69,8 @@ namespace Team07.Controllers
             }
 
             var degreePlanTermRequirement = await _context.DegreePlanTermRequirements
+                .Include(d => d.DegreePlan)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementId == id);
             if (degreePlanTermRequirement == null)
             {
@@ -46,6 +83,8 @@ namespace Team07.Controllers
         // GET: DegreePlanTermRequirements/Create
         public IActionResult Create()
         {
+            ViewData["DegreePlanID"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev");
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "CourseName");
             return View();
         }
 
@@ -62,6 +101,8 @@ namespace Team07.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreePlanID"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", degreePlanTermRequirement.DegreePlanID);
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreePlanTermRequirement.RequirementID);
             return View(degreePlanTermRequirement);
         }
 
@@ -78,6 +119,8 @@ namespace Team07.Controllers
             {
                 return NotFound();
             }
+            ViewData["DegreePlanID"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", degreePlanTermRequirement.DegreePlanID);
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreePlanTermRequirement.RequirementID);
             return View(degreePlanTermRequirement);
         }
 
@@ -113,6 +156,8 @@ namespace Team07.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreePlanID"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", degreePlanTermRequirement.DegreePlanID);
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreePlanTermRequirement.RequirementID);
             return View(degreePlanTermRequirement);
         }
 
@@ -125,6 +170,8 @@ namespace Team07.Controllers
             }
 
             var degreePlanTermRequirement = await _context.DegreePlanTermRequirements
+                .Include(d => d.DegreePlan)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreePlanTermRequirementId == id);
             if (degreePlanTermRequirement == null)
             {

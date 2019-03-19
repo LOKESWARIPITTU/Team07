@@ -20,9 +20,39 @@ namespace Team07.Controllers
         }
 
         // GET: DegreeRequirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(String sortOrder, string searchString)
+
         {
-            return View(await _context.DegreeRequirements.ToListAsync());
+            ViewData["DegreeIdParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeId_desc" : "";
+            ViewData["RequirementIdParm"] = sortOrder == "RequirementId" ? "ReauirementId_desc" : "RequirementId";
+            ViewData["CurrentFilter"] = searchString;
+            var degreereq = from s in _context.DegreeRequirements
+                            select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degreereq = degreereq.Where(s => s.DegreeId.ToString().Contains(searchString)
+                                       || s.RequirementId.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "DegreeId_desc":
+                    degreereq = degreereq.OrderByDescending(s => s.DegreeId);
+                    break;
+
+                case "RequirementId":
+                    degreereq = degreereq.OrderBy(s => s.RequirementId);
+                    break;
+                case "ReauirementId_desc":
+                    degreereq = degreereq.OrderByDescending(s => s.RequirementId);
+                    break;
+                default:
+                    degreereq = degreereq.OrderBy(s => s.DegreeRequirementId);
+                    break;
+            }
+
+            return View(await degreereq.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreeRequirements/Details/5
@@ -34,6 +64,8 @@ namespace Team07.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Degree)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementId == id);
             if (degreeRequirement == null)
             {
@@ -46,6 +78,8 @@ namespace Team07.Controllers
         // GET: DegreeRequirements/Create
         public IActionResult Create()
         {
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev");
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementID", "CourseName");
             return View();
         }
 
@@ -62,6 +96,8 @@ namespace Team07.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -78,6 +114,8 @@ namespace Team07.Controllers
             {
                 return NotFound();
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -113,6 +151,8 @@ namespace Team07.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreeRequirement.DegreeId);
+            ViewData["RequirementId"] = new SelectList(_context.Requirements, "RequirementID", "CourseName", degreeRequirement.RequirementId);
             return View(degreeRequirement);
         }
 
@@ -125,6 +165,8 @@ namespace Team07.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Degree)
+                .Include(d => d.Requirement)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementId == id);
             if (degreeRequirement == null)
             {

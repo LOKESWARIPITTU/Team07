@@ -20,9 +20,47 @@ namespace Team07.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.StudentTerms.ToListAsync());
+           
+            ViewData["TermLabelSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Terms_desc" : "";
+            ViewData["TermSortParm"] = sortOrder == "Term" ? "term_desc" : "Term";
+           // ViewData["StudentSortParm"] = sortOrder == "StudentID" ? "studentID_desc" : "StudentID";
+            ViewData["DegreePlanIDParm"] = sortOrder == "DegreePlanID" ? "degreePlanID_desc" : "DegreePlanID";
+            ViewData["CurrentFilter"] = searchString;
+            var studentTerms = from s in _context.StudentTerms
+                               select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentTerms = studentTerms.Where(s => s.Term.ToString().Contains(searchString)
+                                 || s.TermLabel.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "degreePlanID_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.DegreePlanId);
+                    break;
+                case "DegreePlanID":
+                    studentTerms = studentTerms.OrderBy(s => s.DegreePlanId);
+                    break;
+                
+                case "Terms_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.TermLabel);
+                    break;
+                case "Term":
+                    studentTerms = studentTerms.OrderBy(s => s.Term);
+                    break;
+
+                case "term_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.Term);
+                    break;
+                default:
+                    studentTerms = studentTerms.OrderBy(s => s.StudentTermId);
+                    break;
+            }
+            //var applicationDbContext = _context.StudentTerms.Include(s => s.StudentTermId).Include(s => s.DegreePlan);
+            //return View(await applicationDbContext.ToListAsync());
+            return View(await studentTerms.AsNoTracking().ToListAsync());
         }
 
         // GET: StudentTerms/Details/5
@@ -34,6 +72,7 @@ namespace Team07.Controllers
             }
 
             var studentTerm = await _context.StudentTerms
+                .Include(s => s.DegreePlan)
                 .FirstOrDefaultAsync(m => m.StudentTermId == id);
             if (studentTerm == null)
             {
@@ -46,6 +85,7 @@ namespace Team07.Controllers
         // GET: StudentTerms/Create
         public IActionResult Create()
         {
+            ViewData["DegreePlanId"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev");
             return View();
         }
 
@@ -54,7 +94,7 @@ namespace Team07.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentTermId,StudentID,Term,TermLabel,DegreePlanId")] StudentTerm studentTerm)
+        public async Task<IActionResult> Create([Bind("StudentTermId,Term,TermLabel,DegreePlanId")] StudentTerm studentTerm)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +102,7 @@ namespace Team07.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreePlanId"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", studentTerm.DegreePlanId);
             return View(studentTerm);
         }
 
@@ -78,6 +119,7 @@ namespace Team07.Controllers
             {
                 return NotFound();
             }
+            ViewData["DegreePlanId"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", studentTerm.DegreePlanId);
             return View(studentTerm);
         }
 
@@ -86,7 +128,7 @@ namespace Team07.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentTermId,StudentID,Term,TermLabel,DegreePlanId")] StudentTerm studentTerm)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentTermId,Term,TermLabel,DegreePlanId")] StudentTerm studentTerm)
         {
             if (id != studentTerm.StudentTermId)
             {
@@ -113,6 +155,7 @@ namespace Team07.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreePlanId"] = new SelectList(_context.DegreePlans, "DegreePlanId", "DegreePlanAbbrev", studentTerm.DegreePlanId);
             return View(studentTerm);
         }
 
@@ -125,6 +168,7 @@ namespace Team07.Controllers
             }
 
             var studentTerm = await _context.StudentTerms
+                .Include(s => s.DegreePlan)
                 .FirstOrDefaultAsync(m => m.StudentTermId == id);
             if (studentTerm == null)
             {

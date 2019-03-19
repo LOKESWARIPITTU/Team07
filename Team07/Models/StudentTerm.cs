@@ -1,6 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Team07.Models
 {
@@ -8,9 +11,18 @@ namespace Team07.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentTermId { get; set; }
-        public int StudentID { get; set; }
+
+        //[ForeignKey("StudentId")]
+        //public int StudentID { get; set; }
         public int Term { get; set; }
+
+        [Required]
+        [StringLength(20, MinimumLength = 3)]
+        [Display(Name = "Abbreviation")]
         public string TermLabel { get; set; }
         public int DegreePlanId { get; set; }
+
+       
+        public DegreePlan DegreePlan { get; set; }
     }
 }

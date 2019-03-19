@@ -1,0 +1,13 @@
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.deps.json
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.runtimeconfig.json
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.runtimeconfig.dev.json
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.dll
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.pdb
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.csproj.CoreCompileInputs.cache
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfoInputs.cache
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfo.cs
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.dll
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.pdb

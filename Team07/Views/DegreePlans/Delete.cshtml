@@ -12,18 +12,6 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DegreeID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DegreeID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentID)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DegreePlanAbbrev)
         </dt>
         <dd class = "col-sm-10">
@@ -35,6 +23,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DegreePlanName)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Degree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Degree.DegreeAbrrev)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Student)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Student.First)
+        </dd class>
     </dl>
     
     <form asp-action="Delete">

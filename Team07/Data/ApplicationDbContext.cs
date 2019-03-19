@@ -15,11 +15,12 @@ namespace Team07.Data
         }
     public DbSet<Degree> Degrees { get; set; }
         public DbSet<Requirement> Requirements {get; set;}
-        public DbSet<DegreeRequirement> DegreeRequirements {get; set;}
-        public DbSet<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set;}
-        public DbSet<DegreePlan> DegreePlans {get; set;}
-        public DbSet<Student> Students {get; set;}
+        public DbSet<Student> Students { get; set; }
+        public DbSet<DegreePlan> DegreePlans { get; set; }
+        public DbSet<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set; }
+        public DbSet<DegreeRequirement> DegreeRequirements {get; set;}        
         public DbSet<StudentTerm> StudentTerms {get; set;}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

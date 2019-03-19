@@ -20,9 +20,45 @@ namespace Team07.Controllers
         }
 
         // GET: DegreePlans
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.DegreePlans.ToListAsync());
+            ViewData["StudentidSortParm"] = sortOrder == "Studentid" ? "Studentid_desc" : "Studentid";
+            ViewData["DegreePlanAbvSortParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeplanAbv_desc" : "";
+            ViewData["DegreePlanNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreePlanName_desc" : "";
+            ViewData["DegreeidSortParm"] = sortOrder == "Degreesid" ? "Degreeid_desc" : "Degreeid";
+            ViewData["CurrentFilter"] = searchString;
+            var degreeplans = from s in _context.DegreePlans
+                              select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degreeplans = degreeplans.Where(s => s.DegreePlanAbbrev.Contains(searchString)
+                                       || s.DegreePlanName.Contains(searchString) || s.StudentID.ToString().Contains(searchString) || s.DegreeID.ToString().Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Studentid_desc":
+                    degreeplans = degreeplans.OrderByDescending(s => s.StudentID);
+                    break;
+                case "Studentid":
+                    degreeplans = degreeplans.OrderBy(s => s.StudentID);
+                    break;
+                case "DegreeplanAbv_desc":
+                    degreeplans = degreeplans.OrderBy(s => s.DegreePlanAbbrev);
+                    break;
+                case "DegreePlanName_desc":
+                    degreeplans = degreeplans.OrderBy(s => s.DegreePlanName);
+                    break;
+                case "Degreeid_desc":
+                    degreeplans = degreeplans.OrderByDescending(s => s.DegreeID);
+                    break;
+                case "Degreeid":
+                    degreeplans = degreeplans.OrderBy(s => s.DegreeID);
+                    break;
+                default:
+                    degreeplans = degreeplans.OrderBy(s => s.DegreePlanId);
+                    break;
+            }
+            return View(await degreeplans.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlans/Details/5
@@ -34,6 +70,8 @@ namespace Team07.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
+                .Include(d => d.Degree)
+                .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {
@@ -46,6 +84,8 @@ namespace Team07.Controllers
         // GET: DegreePlans/Create
         public IActionResult Create()
         {
+            ViewData["DegreeID"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev");
+            ViewData["StudentID"] = new SelectList(_context.Students, "StudentId", "First");
             return View();
         }
 
@@ -62,6 +102,8 @@ namespace Team07.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeID"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreePlan.DegreeID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "StudentId", "First", degreePlan.StudentID);
             return View(degreePlan);
         }
 
@@ -78,6 +120,8 @@ namespace Team07.Controllers
             {
                 return NotFound();
             }
+            ViewData["DegreeID"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreePlan.DegreeID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "StudentId", "First", degreePlan.StudentID);
             return View(degreePlan);
         }
 
@@ -113,6 +157,8 @@ namespace Team07.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DegreeID"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbrrev", degreePlan.DegreeID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "StudentId", "First", degreePlan.StudentID);
             return View(degreePlan);
         }
 
@@ -125,6 +171,8 @@ namespace Team07.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
+                .Include(d => d.Degree)
+                .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {

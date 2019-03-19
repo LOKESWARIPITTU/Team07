@@ -20,9 +20,39 @@ namespace Team07.Controllers
         }
 
         // GET: Students
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Students.ToListAsync());
+            ViewData["FamilyNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Fname_desc" : "";
+            ViewData["GivenNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Gname_desc" : "";
+            ViewData["SidSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Sid_desc" : "";
+            ViewData["CatpawsidSortParm"] = sortOrder == "Catpawsids" ? "Catpawsid_desc" : "Catpawsid";
+            ViewData["CurrentFilter"] = searchString;
+            var students = from s in _context.Students
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Last.Contains(searchString)
+                                       || s.First.Contains(searchString) || s.Snumber.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Fname_desc":
+                    students = students.OrderByDescending(s => s.Last);
+                    break;
+                case "Gname_desc":
+                    students = students.OrderBy(s => s.First);
+                    break;
+                case "Sid_desc":
+                    students = students.OrderBy(s => s.Snumber);
+                    break;
+                case "Catpawsid_desc":
+                    students = students.OrderByDescending(s => s.catpawsnum);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.StudentId);
+                    break;
+            }
+            return View(await students.AsNoTracking().ToListAsync());
         }
 
         // GET: Students/Details/5

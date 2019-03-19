@@ -188,9 +188,13 @@ namespace Team07.Migrations
                 {
                     b.Property<int>("DegreeId");
 
-                    b.Property<string>("DegreeAbrrev");
+                    b.Property<string>("DegreeAbrrev")
+                        .IsRequired()
+                        .HasMaxLength(6);
 
-                    b.Property<string>("DegreeName");
+                    b.Property<string>("DegreeName")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
                     b.HasKey("DegreeId");
 
@@ -203,13 +207,21 @@ namespace Team07.Migrations
 
                     b.Property<int>("DegreeID");
 
-                    b.Property<string>("DegreePlanAbbrev");
+                    b.Property<string>("DegreePlanAbbrev")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
-                    b.Property<string>("DegreePlanName");
+                    b.Property<string>("DegreePlanName")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<int>("StudentID");
 
                     b.HasKey("DegreePlanId");
+
+                    b.HasIndex("DegreeID");
+
+                    b.HasIndex("StudentID");
 
                     b.ToTable("DegreePlan");
                 });
@@ -226,6 +238,10 @@ namespace Team07.Migrations
 
                     b.HasKey("DegreePlanTermRequirementId");
 
+                    b.HasIndex("DegreePlanID");
+
+                    b.HasIndex("RequirementID");
+
                     b.ToTable("DegreeplanTermRequirement");
                 });
 
@@ -239,6 +255,10 @@ namespace Team07.Migrations
 
                     b.HasKey("DegreeRequirementId");
 
+                    b.HasIndex("DegreeId");
+
+                    b.HasIndex("RequirementId");
+
                     b.ToTable("DegreeRequirement");
                 });
 
@@ -246,9 +266,13 @@ namespace Team07.Migrations
                 {
                     b.Property<int>("RequirementID");
 
-                    b.Property<string>("CourseName");
+                    b.Property<string>("CourseName")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
-                    b.Property<string>("RequirementAbbrev");
+                    b.Property<string>("RequirementAbbrev")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.HasKey("RequirementID");
 
@@ -259,9 +283,13 @@ namespace Team07.Migrations
                 {
                     b.Property<int>("StudentId");
 
-                    b.Property<string>("First");
+                    b.Property<string>("First")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
-                    b.Property<string>("Last");
+                    b.Property<string>("Last")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.Property<string>("Snumber");
 
@@ -278,13 +306,19 @@ namespace Team07.Migrations
 
                     b.Property<int>("DegreePlanId");
 
-                    b.Property<int>("StudentID");
+                    b.Property<int?>("StudentId");
 
                     b.Property<int>("Term");
 
-                    b.Property<string>("TermLabel");
+                    b.Property<string>("TermLabel")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
                     b.HasKey("StudentTermId");
+
+                    b.HasIndex("DegreePlanId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("StudentTerm");
                 });
@@ -332,6 +366,57 @@ namespace Team07.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Team07.Models.DegreePlan", b =>
+                {
+                    b.HasOne("Team07.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.Student", "Student")
+                        .WithMany("DegreePlans")
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Team07.Models.DegreePlanTermRequirement", b =>
+                {
+                    b.HasOne("Team07.Models.DegreePlan", "DegreePlan")
+                        .WithMany()
+                        .HasForeignKey("DegreePlanID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.Requirement", "Requirement")
+                        .WithMany()
+                        .HasForeignKey("RequirementID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Team07.Models.DegreeRequirement", b =>
+                {
+                    b.HasOne("Team07.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.Requirement", "Requirement")
+                        .WithMany()
+                        .HasForeignKey("RequirementId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Team07.Models.StudentTerm", b =>
+                {
+                    b.HasOne("Team07.Models.DegreePlan", "DegreePlan")
+                        .WithMany()
+                        .HasForeignKey("DegreePlanId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.Student")
+                        .WithMany("StudentTerms")
+                        .HasForeignKey("StudentId");
                 });
 #pragma warning restore 612, 618
         }

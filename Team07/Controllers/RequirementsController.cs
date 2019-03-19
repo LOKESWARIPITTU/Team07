@@ -20,9 +20,32 @@ namespace Team07.Controllers
         }
 
         // GET: Requirements
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Requirements.ToListAsync());
+            ViewData["AbvSortParm"] = String.IsNullOrEmpty(sortOrder) ? "abv_desc" : "";
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["CurrentFilter"] = searchString;
+            var degrees = from s in _context.Requirements
+                          select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degrees = degrees.Where(s => s.RequirementAbbrev.Contains(searchString)
+                                       || s.CourseName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    degrees = degrees.OrderByDescending(s => s.CourseName);
+                    break;
+                case "abv_desc":
+                    degrees = degrees.OrderBy(s => s.RequirementAbbrev);
+                    break;
+                default:
+                    degrees = degrees.OrderBy(s => s.RequirementID);
+                    break;
+            }
+            return View(await degrees.AsNoTracking().ToListAsync());
+            //return View(await _context.Requirements.ToListAsync());
         }
 
         // GET: Requirements/Details/5
