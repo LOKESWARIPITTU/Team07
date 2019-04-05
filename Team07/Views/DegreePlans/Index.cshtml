@@ -37,6 +37,10 @@
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DegreePlanNameSortParm"]">@Html.DisplayNameFor(model => model.DegreePlanName)</a>
             </th>
 
+            <th>
+                @Html.DisplayNameFor(model => model.Done)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -54,6 +58,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DegreePlanName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelIteam => item.Done)
             </td>
 
 

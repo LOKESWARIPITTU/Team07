@@ -30,6 +30,8 @@ namespace Team07.Models
         [Display(Name = "Name")]
         public string DegreePlanName { get; set; }
 
+        public bool Done { get; set; }
+
         public Degree Degree { get; set; }
         public Student Student { get; set; }
     }
