@@ -10,7 +10,7 @@ using Team07.Data;
 namespace Team07.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405202026_Degree")]
+    [Migration("20190405203447_Degree")]
     partial class Degree
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
