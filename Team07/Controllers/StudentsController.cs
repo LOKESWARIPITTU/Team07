@@ -84,7 +84,7 @@ namespace Team07.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentId,First,Last,Snumber,catpawsnum")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentId,First,Last,Snumber,catpawsnum,Done")] Student student)
         {
             if (ModelState.IsValid)
             {

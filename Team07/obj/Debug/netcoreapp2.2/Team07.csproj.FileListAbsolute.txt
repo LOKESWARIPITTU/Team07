@@ -257,7 +257,6 @@ C:\Users\s531378\Documents\44663\Team07\Team07\bin\Debug\netcoreapp2.2\Team07.Vi
 C:\Users\s531378\Documents\44663\Team07\Team07\bin\Debug\netcoreapp2.2\Team07.Views.pdb
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.Views.pdb
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csproj.CopyComplete
-C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csprojAssemblyReference.cache
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Students\Create.g.cshtml.cs
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Students\Delete.g.cshtml.cs
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Students\Details.g.cshtml.cs
@@ -268,6 +267,7 @@ C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Vie
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlans\Details.g.cshtml.cs
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlans\Edit.g.cshtml.cs
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\DegreePlans\Index.g.cshtml.cs
+<<<<<<< HEAD
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csproj.CoreCompileInputs.cache
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.RazorAssemblyInfo.cache
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.RazorAssemblyInfo.cs
@@ -345,3 +345,6 @@ C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Vie
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Details.g.cshtml.cs
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Edit.g.cshtml.cs
 C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Index.g.cshtml.cs
+=======
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csprojAssemblyReference.cache
+>>>>>>> eb578638188af2bf90a245a2da167ac31212116f

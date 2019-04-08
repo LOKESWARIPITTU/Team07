@@ -244,6 +244,8 @@ namespace Team07.Migrations
                         .IsRequired()
                         .HasMaxLength(30);
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("StudentID");
 
                     b.HasKey("DegreePlanId");
@@ -340,6 +342,8 @@ namespace Team07.Migrations
             modelBuilder.Entity("Team07.Models.Student", b =>
                 {
                     b.Property<int>("StudentId");
+
+                    b.Property<bool>("Done");
 
                     b.Property<string>("First")
                         .IsRequired()

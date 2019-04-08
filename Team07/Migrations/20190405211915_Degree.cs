@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Team07.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Degree : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -81,7 +81,8 @@ namespace Team07.Migrations
                     First = table.Column<string>(maxLength: 40, nullable: false),
                     Last = table.Column<string>(maxLength: 40, nullable: false),
                     Snumber = table.Column<string>(nullable: true),
-                    catpawsnum = table.Column<int>(nullable: false)
+                    catpawsnum = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -227,7 +228,8 @@ namespace Team07.Migrations
                     DegreeID = table.Column<int>(nullable: false),
                     StudentID = table.Column<int>(nullable: false),
                     DegreePlanAbbrev = table.Column<string>(maxLength: 20, nullable: false),
-                    DegreePlanName = table.Column<string>(maxLength: 30, nullable: false)
+                    DegreePlanName = table.Column<string>(maxLength: 30, nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
