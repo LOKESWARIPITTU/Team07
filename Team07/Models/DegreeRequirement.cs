@@ -17,5 +17,6 @@ namespace Team07.Models
 
         public Degree Degree { get; set; }
         public Requirement Requirement { get; set; }
+
     }
 }
