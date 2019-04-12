@@ -1,0 +1,92 @@
+resource group - myResourceGroup
+location - eastus
+server - initialserver
+admin db_username - Team07admin@
+admin db_password - Team07adminpswd@ 
+username - Bearcat07 
+password - @Bearcat07pwd
+appserviceplan - myAppServicePlan
+app name - Team07
+
+Connection string 
+
+Server=tcp:initialserver.database.windows.net,1433;Database=coreDB;User ID=Team07admin@;Password=Team07adminpswd@;Encrypt=true;Connection Timeout=30;
+
+
+Local git is configured with url of 'https://Bearcat07@team07.scm.azurewebsites.net/Team07.git'
+{
+  "availabilityState": "Normal",
+  "clientAffinityEnabled": true,
+  "clientCertEnabled": false,
+  "clientCertExclusionPaths": null,
+  "cloningInfo": null,
+  "containerSize": 0,
+  "dailyMemoryTimeQuota": 0,
+  "defaultHostName": "team07.azurewebsites.net",
+  "deploymentLocalGitUrl": "https://Bearcat07@team07.scm.azurewebsites.net/Team07.git",
+  "enabled": true,
+  "enabledHostNames": [
+    "team07.azurewebsites.net",
+    "team07.scm.azurewebsites.net"
+  ],
+  "ftpPublishingUrl": "ftp://waws-prod-blu-129.ftp.azurewebsites.windows.net/site/wwwroot",
+  "geoDistributions": null,
+  "hostNameSslStates": [
+    {
+      "hostType": "Standard",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "team07.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIp": null
+    },
+    {
+      "hostType": "Repository",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "team07.scm.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIp": null
+    }
+  ],
+  "hostNames": [
+    "team07.azurewebsites.net"
+  ],
+  "hostNamesDisabled": false,
+  "hostingEnvironmentProfile": null,
+  "httpsOnly": false,
+  "hyperV": false,
+  "id": "/subscriptions/6b74a0f6-2480-43aa-9007-f3c6e1132238/resourceGroups/myResourceGroup/providers/Microsoft.Web/sites/Team07",
+  "identity": null,
+  "inProgressOperationId": null,
+  "isDefaultContainer": null,
+  "isXenon": false,
+  "kind": "app",
+  "lastModifiedTimeUtc": "2019-04-11T22:21:24.826666",
+  "location": "East US",
+  "maxNumberOfWorkers": null,
+  "name": "Team07",
+  "outboundIpAddresses": "40.71.11.128,13.68.173.13,13.68.168.238,40.87.43.209,13.68.142.245",
+  "possibleOutboundIpAddresses": "40.71.11.128,13.68.173.13,13.68.168.238,40.87.43.209,13.68.142.245,40.114.112.228,13.68.181.166,40.87.46.124",
+  "redundancyMode": "None",
+  "repositorySiteName": "Team07",
+  "reserved": false,
+  "resourceGroup": "myResourceGroup",
+  "scmSiteAlsoStopped": false,
+  "serverFarmId": "/subscriptions/6b74a0f6-2480-43aa-9007-f3c6e1132238/resourceGroups/myResourceGroup/providers/Microsoft.Web/serverfarms/myAppServicePlan",
+  "siteConfig": null,
+  "slotSwapStatus": null,
+  "state": "Running",
+  "suspendedTill": null,
+  "tags": null,
+  "targetSwapSlot": null,
+  "trafficManagerHostNames": null,
+  "type": "Microsoft.Web/sites",
+  "usageState": "Normal"
+}
