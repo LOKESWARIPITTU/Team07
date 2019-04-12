@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Team07",
+    "\\Team07\\Data",
+    "\\Team07\\Models",
     "\\Team07\\wwwroot",
     "\\Team07\\wwwroot\\lib",
     "\\Team07\\wwwroot\\lib\\bootstrap",
     "\\Team07\\wwwroot\\lib\\bootstrap\\dist",
     "\\Team07\\wwwroot\\lib\\bootstrap\\dist\\js",
-    "\\Team07\\wwwroot\\lib\\jquery",
-    "\\Team07\\wwwroot\\lib\\jquery\\dist"
+    "\\Team07\\wwwroot\\lib\\jquery"
   ],
-  "SelectedNode": "\\Team07\\Controllers",
+  "SelectedNode": "\\Team07\\Models\\Car.cs",
   "PreviewInSolutionExplorer": false
 }
