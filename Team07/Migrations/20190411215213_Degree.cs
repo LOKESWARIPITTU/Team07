@@ -282,6 +282,7 @@ namespace Team07.Migrations
                     Term = table.Column<int>(nullable: false),
                     TermLabel = table.Column<string>(maxLength: 20, nullable: false),
                     DegreePlanId = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false),
                     StudentId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

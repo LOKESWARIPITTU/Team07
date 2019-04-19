@@ -368,6 +368,8 @@ namespace Team07.Migrations
 
                     b.Property<int>("DegreePlanId");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int?>("StudentId");
 
                     b.Property<int>("Term");

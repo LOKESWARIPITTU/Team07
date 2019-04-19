@@ -22,7 +22,8 @@ namespace Team07.Models
         public string TermLabel { get; set; }
         public int DegreePlanId { get; set; }
 
-       
+        public bool Done { get; set; }
+
         public DegreePlan DegreePlan { get; set; }
     }
 }
