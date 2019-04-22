@@ -12950,11 +12950,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\Team07.csproj",
+      "projectUniqueName": "C:\\Users\\s531378\\Documents\\Team07\\Team07\\Team07.csproj",
       "projectName": "Team07",
-      "projectPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\Team07.csproj",
+      "projectPath": "C:\\Users\\s531378\\Documents\\Team07\\Team07\\Team07.csproj",
       "packagesPath": "C:\\Users\\s531378\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s531378\\Documents\\44663\\Team07\\Team07\\obj\\",
+      "outputPath": "C:\\Users\\s531378\\Documents\\Team07\\Team07\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
