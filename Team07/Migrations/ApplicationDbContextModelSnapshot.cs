@@ -184,35 +184,6 @@ namespace Team07.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Team07.Models.Car", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate");
-
-                    b.Property<string>("DesiredPosition")
-                        .IsRequired()
-                        .HasMaxLength(150);
-
-                    b.Property<string>("Family");
-
-                    b.Property<string>("Given");
-
-                    b.Property<string>("GraduationTerm")
-                        .IsRequired()
-                        .HasMaxLength(150);
-
-                    b.Property<int>("Rating");
-
-                    b.Property<string>("Skills");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Car");
-                });
-
             modelBuilder.Entity("Team07.Models.Degree", b =>
                 {
                     b.Property<int>("DegreeId");
@@ -308,35 +279,6 @@ namespace Team07.Migrations
                     b.HasKey("RequirementID");
 
                     b.ToTable("Requirement");
-                });
-
-            modelBuilder.Entity("Team07.Models.Song", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate");
-
-                    b.Property<string>("DesiredPosition")
-                        .IsRequired()
-                        .HasMaxLength(150);
-
-                    b.Property<string>("Family");
-
-                    b.Property<string>("Given");
-
-                    b.Property<string>("GraduationTerm")
-                        .IsRequired()
-                        .HasMaxLength(150);
-
-                    b.Property<int>("Rating");
-
-                    b.Property<string>("Skills");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Song");
                 });
 
             modelBuilder.Entity("Team07.Models.Student", b =>

@@ -348,3 +348,13 @@ C:\Users\S533487\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Vie
 =======
 C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Team07.csprojAssemblyReference.cache
 >>>>>>> eb578638188af2bf90a245a2da167ac31212116f
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Create.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Delete.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Details.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Edit.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Index.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Create.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Delete.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Details.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Edit.g.cshtml.cs
+C:\Users\s531378\Documents\44663\Team07\Team07\obj\Debug\netcoreapp2.2\Razor\Views\Songs\Index.g.cshtml.cs

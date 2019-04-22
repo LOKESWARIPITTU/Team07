@@ -20,8 +20,7 @@ namespace Team07.Data
         public DbSet<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set; }
         public DbSet<DegreeRequirement> DegreeRequirements {get; set;}        
         public DbSet<StudentTerm> StudentTerms {get; set;}
-        public DbSet<Car> Cars{get; set;}
-        public DbSet<Song> Songs { get; set; }
+       
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,10 +33,9 @@ namespace Team07.Data
             modelBuilder.Entity<DegreePlan>().ToTable("DegreePlan");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");
-            modelBuilder.Entity<Car>().ToTable("Car");
-            modelBuilder.Entity<Song>().ToTable("Song");
+      
         }
 
-        public DbSet<Team07.Models.Song> Song { get; set; }
+      
     }
 }
