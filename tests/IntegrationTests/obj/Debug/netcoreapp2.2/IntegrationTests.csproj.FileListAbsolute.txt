@@ -39,3 +39,17 @@ C:\Users\s531378\Documents\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2
 C:\Users\s531378\Documents\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfo.cs
 C:\Users\s531378\Documents\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.dll
 C:\Users\s531378\Documents\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.pdb
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.deps.json
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.runtimeconfig.json
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.runtimeconfig.dev.json
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.dll
+D:\Team07\tests\IntegrationTests\bin\Debug\netcoreapp2.2\IntegrationTests.pdb
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.csprojAssemblyReference.cache
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.csproj.CoreCompileInputs.cache
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfoInputs.cache
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfo.cs
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.dll
+D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.pdb

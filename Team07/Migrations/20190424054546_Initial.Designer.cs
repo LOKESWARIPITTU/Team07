@@ -10,8 +10,8 @@ using Team07.Data;
 namespace Team07.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190422070412_Degree")]
-    partial class Degree
+    [Migration("20190424054546_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,11 +257,15 @@ namespace Team07.Migrations
 
                     b.Property<int>("RequirementId");
 
+                    b.Property<int?>("StudentTermId");
+
                     b.HasKey("DegreeRequirementId");
 
                     b.HasIndex("DegreeId");
 
                     b.HasIndex("RequirementId");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("DegreeRequirement");
                 });
@@ -392,7 +396,7 @@ namespace Team07.Migrations
             modelBuilder.Entity("Team07.Models.DegreePlanTermRequirement", b =>
                 {
                     b.HasOne("Team07.Models.DegreePlan", "DegreePlan")
-                        .WithMany()
+                        .WithMany("degreePlanTermRequirements")
                         .HasForeignKey("DegreePlanID")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -405,7 +409,7 @@ namespace Team07.Migrations
             modelBuilder.Entity("Team07.Models.DegreeRequirement", b =>
                 {
                     b.HasOne("Team07.Models.Degree", "Degree")
-                        .WithMany()
+                        .WithMany("DegreeRequirements")
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -413,12 +417,16 @@ namespace Team07.Migrations
                         .WithMany()
                         .HasForeignKey("RequirementId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.StudentTerm")
+                        .WithMany("DegreeRequirements")
+                        .HasForeignKey("StudentTermId");
                 });
 
             modelBuilder.Entity("Team07.Models.StudentTerm", b =>
                 {
                     b.HasOne("Team07.Models.DegreePlan", "DegreePlan")
-                        .WithMany()
+                        .WithMany("StudentTerms")
                         .HasForeignKey("DegreePlanId")
                         .OnDelete(DeleteBehavior.Cascade);
 

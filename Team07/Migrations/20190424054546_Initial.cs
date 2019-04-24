@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Team07.Migrations
 {
-    public partial class Degree : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -196,31 +196,6 @@ namespace Team07.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DegreeRequirement",
-                columns: table => new
-                {
-                    DegreeRequirementId = table.Column<int>(nullable: false),
-                    DegreeId = table.Column<int>(nullable: false),
-                    RequirementId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DegreeRequirement", x => x.DegreeRequirementId);
-                    table.ForeignKey(
-                        name: "FK_DegreeRequirement_Degree_DegreeId",
-                        column: x => x.DegreeId,
-                        principalTable: "Degree",
-                        principalColumn: "DegreeId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DegreeRequirement_Requirement_RequirementId",
-                        column: x => x.RequirementId,
-                        principalTable: "Requirement",
-                        principalColumn: "RequirementID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DegreePlan",
                 columns: table => new
                 {
@@ -302,6 +277,38 @@ namespace Team07.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "DegreeRequirement",
+                columns: table => new
+                {
+                    DegreeRequirementId = table.Column<int>(nullable: false),
+                    DegreeId = table.Column<int>(nullable: false),
+                    RequirementId = table.Column<int>(nullable: false),
+                    StudentTermId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DegreeRequirement", x => x.DegreeRequirementId);
+                    table.ForeignKey(
+                        name: "FK_DegreeRequirement_Degree_DegreeId",
+                        column: x => x.DegreeId,
+                        principalTable: "Degree",
+                        principalColumn: "DegreeId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DegreeRequirement_Requirement_RequirementId",
+                        column: x => x.RequirementId,
+                        principalTable: "Requirement",
+                        principalColumn: "RequirementID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DegreeRequirement_StudentTerm_StudentTermId",
+                        column: x => x.StudentTermId,
+                        principalTable: "StudentTerm",
+                        principalColumn: "StudentTermId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -372,6 +379,11 @@ namespace Team07.Migrations
                 column: "RequirementId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DegreeRequirement_StudentTermId",
+                table: "DegreeRequirement",
+                column: "StudentTermId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StudentTerm_DegreePlanId",
                 table: "StudentTerm",
                 column: "DegreePlanId");
@@ -406,9 +418,6 @@ namespace Team07.Migrations
                 name: "DegreeRequirement");
 
             migrationBuilder.DropTable(
-                name: "StudentTerm");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -416,6 +425,9 @@ namespace Team07.Migrations
 
             migrationBuilder.DropTable(
                 name: "Requirement");
+
+            migrationBuilder.DropTable(
+                name: "StudentTerm");
 
             migrationBuilder.DropTable(
                 name: "DegreePlan");

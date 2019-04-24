@@ -40,3 +40,17 @@ C:\Users\s531378\Documents\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTe
 C:\Users\s531378\Documents\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfo.cs
 C:\Users\s531378\Documents\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.dll
 C:\Users\s531378\Documents\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.pdb
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\UnitTests.deps.json
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\UnitTests.runtimeconfig.json
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\UnitTests.runtimeconfig.dev.json
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\UnitTests.dll
+D:\Team07\tests\UnitTests\bin\Debug\netcoreapp2.2\UnitTests.pdb
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.csprojAssemblyReference.cache
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.csproj.CoreCompileInputs.cache
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfoInputs.cache
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfo.cs
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.dll
+D:\Team07\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.pdb
