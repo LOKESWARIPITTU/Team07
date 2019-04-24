@@ -53,3 +53,4 @@ D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.Assemb
 D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.AssemblyInfo.cs
 D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.dll
 D:\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.pdb
+C:\Users\s531378\Documents\44663\Team07\tests\IntegrationTests\obj\Debug\netcoreapp2.2\IntegrationTests.csprojAssemblyReference.cache

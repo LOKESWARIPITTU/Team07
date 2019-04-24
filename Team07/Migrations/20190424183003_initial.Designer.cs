@@ -10,8 +10,8 @@ using Team07.Data;
 namespace Team07.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190424180548_Initial")]
-    partial class Initial
+    [Migration("20190424183003_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
