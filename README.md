@@ -6,7 +6,7 @@
 * Abhinay Reddy Kaitha
 
 For cloning our project, visit https://github.com/LOKESWARIPITTU/Team07. Click on clone or download, copy the link displayed and clone the project by right clicking and selecting  git clone or else open gitbash and type git clone and paste the link. We can run the app by clicking on run option in visual studio.
-
+azure deployment link:https://team07.azurewebsites.net/
 Issue tracker link : https://github.com/LOKESWARIPITTU/Team07/issues
 
 ![Screenshot (119)](https://user-images.githubusercontent.com/35476652/54849060-211d4700-4cb1-11e9-8fcd-9bf976d757e8.png)
