@@ -24,5 +24,10 @@ namespace Team07.Models
         [Display(Name = "Name")]
         public string CourseName { get; set; }
 
+        public int DegreeId { get; set; }
+
+        public Degree Degree { get; set; }
+        public StudentTerm StudentTerm { get; set; }
+
     }
 }

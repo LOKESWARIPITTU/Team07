@@ -236,6 +236,8 @@ namespace Team07.Migrations
 
                     b.Property<int>("RequirementID");
 
+                    b.Property<int?>("StudentTermId");
+
                     b.Property<int>("TermID");
 
                     b.HasKey("DegreePlanTermRequirementId");
@@ -243,6 +245,8 @@ namespace Team07.Migrations
                     b.HasIndex("DegreePlanID");
 
                     b.HasIndex("RequirementID");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("DegreeplanTermRequirement");
                 });
@@ -255,15 +259,11 @@ namespace Team07.Migrations
 
                     b.Property<int>("RequirementId");
 
-                    b.Property<int?>("StudentTermId");
-
                     b.HasKey("DegreeRequirementId");
 
                     b.HasIndex("DegreeId");
 
                     b.HasIndex("RequirementId");
-
-                    b.HasIndex("StudentTermId");
 
                     b.ToTable("DegreeRequirement");
                 });
@@ -276,11 +276,19 @@ namespace Team07.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
+                    b.Property<int>("DegreeId");
+
                     b.Property<string>("RequirementAbbrev")
                         .IsRequired()
                         .HasMaxLength(30);
 
+                    b.Property<int?>("StudentTermId");
+
                     b.HasKey("RequirementID");
+
+                    b.HasIndex("DegreeId");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("Requirement");
                 });
@@ -394,7 +402,7 @@ namespace Team07.Migrations
             modelBuilder.Entity("Team07.Models.DegreePlanTermRequirement", b =>
                 {
                     b.HasOne("Team07.Models.DegreePlan", "DegreePlan")
-                        .WithMany("degreePlanTermRequirements")
+                        .WithMany("DegreePlanTermRequirements")
                         .HasForeignKey("DegreePlanID")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -402,12 +410,16 @@ namespace Team07.Migrations
                         .WithMany()
                         .HasForeignKey("RequirementID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.StudentTerm", "StudentTerm")
+                        .WithMany("DegreePlanTermRequirement")
+                        .HasForeignKey("StudentTermId");
                 });
 
             modelBuilder.Entity("Team07.Models.DegreeRequirement", b =>
                 {
                     b.HasOne("Team07.Models.Degree", "Degree")
-                        .WithMany("DegreeRequirements")
+                        .WithMany()
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -415,9 +427,17 @@ namespace Team07.Migrations
                         .WithMany()
                         .HasForeignKey("RequirementId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
 
-                    b.HasOne("Team07.Models.StudentTerm")
-                        .WithMany("DegreeRequirements")
+            modelBuilder.Entity("Team07.Models.Requirement", b =>
+                {
+                    b.HasOne("Team07.Models.Degree", "Degree")
+                        .WithMany("Requirements")
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Team07.Models.StudentTerm", "StudentTerm")
+                        .WithMany("Requirements")
                         .HasForeignKey("StudentTermId");
                 });
 

@@ -25,6 +25,7 @@ namespace Team07.Models
         public bool Done { get; set; }
 
         public DegreePlan DegreePlan { get; set; }
-        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
+        public ICollection<Requirement> Requirements { get; set; }
+        public ICollection<DegreePlanTermRequirement> DegreePlanTermRequirement { get; set; }
     }
 }

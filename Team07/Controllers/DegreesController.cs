@@ -59,7 +59,7 @@ namespace Team07.Controllers
             }
 
             var degree = await _context.Degrees
-              .Include(d => d.DegreeRequirements)
+              .Include(d => d.Requirements)
               .SingleOrDefaultAsync(m => m.DegreeId == id);
 
             if (degree == null)

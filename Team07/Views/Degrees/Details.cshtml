@@ -17,7 +17,7 @@
         <dt>@Html.DisplayNameFor(model => model.DegreeAbrrev) </dt>
         <dd>@Html.DisplayFor(model => model.DegreeAbrrev)</dd>
 
-        <dt>@Html.DisplayNameFor(model => model.DegreeRequirements)  </dt>
+        <dt>@Html.DisplayNameFor(model => model.Requirements)  </dt>
         <dd>
             <table class="table">
                 <tr>
@@ -25,12 +25,12 @@
                     <th>Abbrev</th>
                     <th>Requirement Name</th>
                 </tr>
-                @foreach (var item in Model.DegreeRequirements.OrderBy(r => r.RequirementId))
+                @foreach (var item in Model.Requirements.OrderBy(r => r.RequirementID))
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.DegreeRequirementId) </td>
-                        <td>@Html.DisplayFor(modelItem => item.DegreeId) </td>
-                        <td>@Html.DisplayFor(modelItem => item.RequirementId)   </td>
+                        <td>@Html.DisplayFor(modelItem => item.RequirementID) </td>
+                        @*<td>@Html.DisplayFor(modelItem => item.DegreeID) </td>*@
+                        <td>@Html.DisplayFor(modelItem => item.RequirementID)   </td>
                     </tr>
                 }
             </table>

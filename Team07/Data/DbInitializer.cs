@@ -50,19 +50,19 @@ namespace Team07.Data
                 {
 
 
-                new Requirement{ RequirementID = 460 , RequirementAbbrev = "DB" , CourseName = "44-460 Database"},
-                new Requirement{ RequirementID = 356 , RequirementAbbrev = "NF", CourseName = "44-356 Network Fundamentals"},
-                new Requirement{ RequirementID = 542 , RequirementAbbrev = "OOP" , CourseName = "44-542 Object Oriented Programming"},
-                new Requirement{ RequirementID = 563 , RequirementAbbrev = "Web apps" , CourseName = "44-563 Web apps"},
-new Requirement{ RequirementID = 560 , RequirementAbbrev = "ADB" , CourseName = "44-560 Advance Database topics"},
-new Requirement{ RequirementID = 555 , RequirementAbbrev = "NS" , CourseName = "44-555 Network Security"},
-new Requirement{ RequirementID = 618 , RequirementAbbrev = "PM" , CourseName = "44-618 Project Management"},
-new Requirement{ RequirementID = 1 , RequirementAbbrev = "MC" , CourseName = "Mobile Computing ios"},
-new Requirement{ RequirementID = 664 , RequirementAbbrev = "UXD" , CourseName = "44-664  User Experience Design"},
-new Requirement{ RequirementID = 10 , RequirementAbbrev = "E1" , CourseName = "Elective 1"},
-new Requirement{ RequirementID = 20 , RequirementAbbrev = "E2" , CourseName = "Elective 2"},
-new Requirement{ RequirementID = 691 , RequirementAbbrev = "GDP1" , CourseName = "GDP1"},
-new Requirement{ RequirementID = 692 , RequirementAbbrev = "GDP2" , CourseName = "GDP2"}
+                new Requirement{ RequirementID = 460 , DegreeId = 3 ,RequirementAbbrev = "DB" , CourseName = "44-460 Database"},
+                new Requirement{ RequirementID = 356 , DegreeId = 3 ,RequirementAbbrev = "NF", CourseName = "44-356 Network Fundamentals"},
+                new Requirement{ RequirementID = 542 , DegreeId = 3 ,RequirementAbbrev = "OOP" , CourseName = "44-542 Object Oriented Programming"},
+                new Requirement{ RequirementID = 563 , DegreeId = 3 ,RequirementAbbrev = "Web apps" , CourseName = "44-563 Web apps"},
+new Requirement{ RequirementID = 560 , DegreeId = 3 ,RequirementAbbrev = "ADB" , CourseName = "44-560 Advance Database topics"},
+new Requirement{ RequirementID = 555 , DegreeId = 3 ,RequirementAbbrev = "NS" , CourseName = "44-555 Network Security"},
+new Requirement{ RequirementID = 618 , DegreeId = 3 ,RequirementAbbrev = "PM" , CourseName = "44-618 Project Management"},
+new Requirement{ RequirementID = 1 , DegreeId = 3 ,RequirementAbbrev = "MC" , CourseName = "Mobile Computing ios"},
+new Requirement{ RequirementID = 664 , DegreeId = 3 ,RequirementAbbrev = "UXD" , CourseName = "44-664  User Experience Design"},
+new Requirement{ RequirementID = 10 , DegreeId = 3 ,RequirementAbbrev = "E1" , CourseName = "Elective 1"},
+new Requirement{ RequirementID = 20 , DegreeId = 3 ,RequirementAbbrev = "E2" , CourseName = "Elective 2"},
+new Requirement{ RequirementID = 691 , DegreeId = 3 ,RequirementAbbrev = "GDP1" , CourseName = "GDP1"},
+new Requirement{ RequirementID = 692 , DegreeId = 3 ,RequirementAbbrev = "GDP2" , CourseName = "GDP2"}
 
 };
                 Console.WriteLine($"Inserted {requirements.Length} new reuirements.");

@@ -24,7 +24,7 @@ namespace Team07.Models
         [Display(Name = "Name")]
 
         public string DegreeName { get; set; }
-        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
+        public ICollection<Requirement> Requirements { get; set; }
       
 
     }

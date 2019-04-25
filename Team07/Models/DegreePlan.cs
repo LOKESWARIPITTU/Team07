@@ -35,7 +35,7 @@ namespace Team07.Models
         public Degree Degree { get; set; }
         public Student Student { get; set; }
         public ICollection<StudentTerm> StudentTerms { get; set; }
-        public ICollection<DegreePlanTermRequirement> degreePlanTermRequirements { get; set; }
+        public ICollection<DegreePlanTermRequirement> DegreePlanTermRequirements { get; set; }
     }
 }
  

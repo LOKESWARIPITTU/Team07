@@ -25,6 +25,9 @@ namespace Team07.Models
         public DegreePlan DegreePlan { get; set; }
         public Requirement Requirement { get; set; }
 
+        public StudentTerm StudentTerm { get; set; }
+       
+
     }
 
     }
